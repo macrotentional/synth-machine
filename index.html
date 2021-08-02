@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <title>Synth machine</title>
+      <script>
+        function play(str) {
+          let displayField = document.getElementById('display')
+
+          if (str === "q" || str === "Q") {
+            document.getElementById('display').innerText = ("Club Electro Synth");
+          } else if (str === "w" || str === "W") {
+            document.getElementById('display').innerText = ("Deep Chords Synth");
+          } else if (str === "e" || str === "E") {
+            document.getElementById('display').innerText = ("Hoover Synth");
+          } else if (str === "a" || str === "A") {
+            document.getElementById('display').innerText = ("Old School House Synth");
+          } else if (str === "s" || str === "S") {
+            document.getElementById('display').innerText = ("Pitched n Glitched Synth");
+          } else if (str === "d" || str === "D") {
+            document.getElementById('display').innerText = ("Steel Mayhem Synth");
+          } else if (str === "z" || str === "Z") {
+            document.getElementById('display').innerText = ("130 BPM Synth");
+          } else if (str === "x" || str === "X") {
+            document.getElementById('display').innerText = ("Techno Sexy Synth");
+          } else if (str === "c" || str === "C") {
+            document.getElementById('display').innerText = ("Trance Eurogate Synth");
+          }
+          var audio = document.getElementById(str);
+          audio.play();
+        }
+
+        window.document.onkeyup = function(event) { 
+          let keystroke = event.key
+          if (keystroke === "q" || keystroke === "Q") {
+            play("Q");
+          } else if (keystroke === "w" || keystroke === "W") {
+            play("W");
+          } else if (keystroke === "e" || keystroke === "E") {
+            play("E");
+          } else if (keystroke === "a" || keystroke === "A") {
+            play("A");
+          } else if (keystroke === "s" || keystroke === "S") {
+            play("S");
+          } else if (keystroke === "d" || keystroke === "D") {
+            play("D");
+          } else if (keystroke === "z" || keystroke === "Z") {
+            play("Z");
+          } else if (keystroke === "x" || keystroke === "X") {
+            play("X");
+          } else if (keystroke === "c" || keystroke === "C") {
+            play("C");
+          }
+        }
+      </script>
+
+  </head>
+  <body> 
+    <div class="container" id="drum-machine">
+      <h1 class="text-center">Synth machine</h1>
+      <div class="card my-3"></div>
+      <div class="card-body">
+      <div id="display" class="text-center">The display is empty</div>
+      </div>
+      </div>
+      <br>
+      <button class="drum-pad btn-block btn-primary" id="drum-0" onclick="play('Q')">Q
+        <audio src="./clips/Q-Club-Electro-Synth.wav" class="clip" id="Q"></audio></button>
+      <button class="drum-pad btn-block btn-primary" id="drum-1" onclick="play('W')">W
+        <audio src="./clips/W-Deep-Chords-Synth.wav" class="clip" id="W"></audio></button>
+      <button class="drum-pad btn-block btn-primary" id="drum-2" onclick="play('E')">E
+        <audio src="./clips/E-Hoover-Synth.wav" class="clip" id="E"></audio></button>
+      <button class="drum-pad btn-block btn-primary" id="drum-3" onclick="play('A')">A
+        <audio src="./clips/A-Old-School-House-Synth.wav" class="clip" id="A"></audio></button>
+      <button class="drum-pad btn-block btn-primary" id="drum-4" onclick="play('S')">S
+        <audio src="./clips/S-Pitched-n-Glitched-Synth.wav" class="clip" id="S"></audio></button>
+      <button class="drum-pad btn-block btn-primary" id="drum-5" onclick="play('D')">D
+        <audio src="./clips/D-Steel-Mayhem-130BPM-Synth.wav" class="clip" id="D"></audio></button>
+      <button class="drum-pad btn-block btn-primary" id="drum-6" onclick="play('Z')">Z
+        <audio src="./clips/Z-Synth-130BPM-Synth.wav" class="clip" id="Z"></audio></button>
+      <button class="drum-pad btn-block btn-primary" id="drum-7" onclick="play('X')">X
+        <audio src="./clips/X-Synth-Techno-Sexy-Synth.wav" class="clip" id="X"></audio></button>
+      <button class="drum-pad btn-block btn-primary" id="drum-8" onclick="play('C')">C
+        <audio src="./clips/C-Trance-Eurogate-Arp-Synth.wav" class="clip" id="C"></audio></button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+  </html>
